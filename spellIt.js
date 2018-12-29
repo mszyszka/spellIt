@@ -9,28 +9,29 @@
 
 
 function spellItWithJQuery() {
-    let txt = $('#myH1').text();
-    let lettersArray = [];
+    let txt = 'This is text to print letter by letter';
+    // let lettersArray = [];
     
 
     for(let i = 0; i <= txt.length; i++){
         let letter = txt[i];
 
+        let myH1 = document.createElement('h1');
+        myH1.classList.add('.myH1');
+
         let myDiv = document.createElement('div');
-        myDiv.addClass(divWithLetter);
+        myDiv.classList.add('.letterDiv');
+
         let myLetter = document.createTextNode(letter);
 
         myDiv.appendChild(myLetter);
+        myH1.appendChild(myDiv);
 
         console.log(myDiv);
 
 
-        // lettersArray.push(letter);
     }
 
-    // $.each(lettersArray, function() {
-    //     this.
-    // });
     
 }
 
