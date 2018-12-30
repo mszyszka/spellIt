@@ -7,31 +7,36 @@
 
 // spellIt();
 
+//1.Stworzyć kontener w którym zostanie wyświetlony text.
+//2.Każdą z liter ze zmiennej txt umieścić w divie o classie letterDiv
+//3.Po kolei rozszeżać kontener o kolejne divy z literami. -
+//to zadanie dla pętli która wykona się tyle razy ile liter zawiera zmienna txt
+// w każdej iteracji pętli, kontener będzie rozszeżany o litere o indeksie i 
+
 
 function spellItWithJQuery() {
+
     let txt = 'This is text to print letter by letter';
-    // let lettersArray = [];
+    
     
 
-    for(let i = 0; i <= txt.length; i++){
+    for(let i = 0; i < txt.length; i++){
+
+        let mainContainer = document.getElementById('mainContainer');
         let letter = txt[i];
-
-        let myH1 = document.createElement('h1');
-        myH1.classList.add('.myH1');
-
-        let myDiv = document.createElement('div');
-        myDiv.classList.add('.letterDiv');
-
         let myLetter = document.createTextNode(letter);
 
-        myDiv.appendChild(myLetter);
-        myH1.appendChild(myDiv);
+        let span = document.createElement('span');
+        span.classList.add('.letterDiv');
 
-        console.log(myDiv);
+        span.appendChild(myLetter);
+        mainContainer.appendChild(span);
 
 
     }
 
+    console.log(mainContainer);
+    
     
 }
 
