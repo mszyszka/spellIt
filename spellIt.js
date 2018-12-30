@@ -16,26 +16,34 @@
 
 function spellItWithJQuery() {
 
-    let txt = 'This is text to print letter by letter';
+    let txt = 'This is text to print letter by letter. It can be done because of my awesome function.';
     
     
-
+    
     for(let i = 0; i < txt.length; i++){
 
-        let mainContainer = document.getElementById('mainContainer');
-        let letter = txt[i];
-        let myLetter = document.createTextNode(letter);
+        (function(i) {
 
-        let span = document.createElement('span');
-        span.classList.add('.letterDiv');
+            setTimeout(function(){
 
-        span.appendChild(myLetter);
-        mainContainer.appendChild(span);
-
-
+                let mainContainer = document.getElementById('mainContainer');
+                let letter = txt[i];
+                let myLetter = document.createTextNode(letter);
+        
+                let span = document.createElement('span');
+                span.classList.add('.letterSpan');
+        
+                span.appendChild(myLetter);
+        
+                mainContainer.appendChild(span);
+    
+            }, 80*i);
+    
+        })(i);
+        
+        
     }
 
-    console.log(mainContainer);
     
     
 }
